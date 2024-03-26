@@ -24,6 +24,7 @@
     --title-text-color: #5722CD;
     --normal-text-color: #0C0C0C;
     --floating-text-color: #F2F0FF;
+    --white: #FFF;
     --service-tile-text-color: #7A7A7A;
     --primary-bg-color: #4845E4;
     --button-bg-color: #ED4385;
@@ -33,7 +34,7 @@
 * {
     margin: 0;
     padding: 0;
-    border: 0;
+    border: none;
     box-sizing: border-box;
 }
 
@@ -45,6 +46,8 @@ body {
     font-family: Roboto, 'Arial', sans-serif;
     font-weight: 300;
     font-size: 20px;
+    text-align: center;
+    color: var(--normal-text-color);
 }
 
 /* ------------------------------- 2. Typography ----------------------------------- */
@@ -57,17 +60,139 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Merriweather, 'Times New Roman', serif;
 }
 
+h1 {
+    font-size: 42px;
+    padding: 20px 0;
+}
+
+h3 {
+    font-size: 30px;
+    padding: 15px 0;
+}
+
+p {
+    font-size: 24px;
+    margin: 8px 0;
+}
+
+
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
 
+.outer-content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inner-content-container {
+    flex-basis: 1400px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
 /* --------------- 3.2 Other --------------------------- */
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--title-text-color)
+}
+
+button {
+    background-color: var(--button-bg-color);
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.15);
+    padding: 25px 45px;
+    margin: 30px 0;
+}
+
+button:hover {
+    cursor: pointer;
+}
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 
+.header-section {
+    background: var(--primary-bg-color);
+    background: linear-gradient(90deg, #4B49E8 0%, #4B49E8 33%, #5722CD  100%);
+    color: var(--white);
+    padding: 30px 0;
+    position: relative;
+}
+
+.header-content__navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header-content__navigation ul {
+    flex-basis: 400px;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-content__navigation a {
+    color: var(--white);
+}
+
+.header-content__hero {
+    padding: 100px 0;
+    margin-bottom: 100px;
+    max-width: 900px;
+}
+
+.header-content__squiggle {
+    background-image: url(../assets/squiggle_line_stripe.svg);
+    position: absolute;
+    bottom: 0;
+    left: cal(50%-40px);
+    height: 100px;
+    width: 80px;
+}
+
 /* --------------- 4.2 Introduction ------------------- */
+
+.introduction-section {
+    background-color: var(--white);
+}
+
+.introduction-content{
+    max-width: 900px;
+    padding: 100px 0;
+}
+
+.introduction-content h3 {
+    color: var(--title-text-color);
+    line-height: 1.5;
+}
+
+.introduction-content p {
+    margin-top: 100px;
+}
+
 
 /* --------------- 4.3 Projects ------------------------- */
 
