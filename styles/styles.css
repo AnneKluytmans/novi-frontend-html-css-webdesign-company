@@ -44,10 +44,14 @@ html {
 
 body {
     font-family: Roboto, 'Arial', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 20px;
     text-align: center;
     color: var(--normal-text-color);
+}
+
+img {
+    width: 100%;
 }
 
 /* ------------------------------- 2. Typography ----------------------------------- */
@@ -70,8 +74,12 @@ h3 {
     padding: 15px 0;
 }
 
+h4 {
+    font-size: 28px;
+    padding: 12px 0;
+}
+
 p {
-    font-size: 24px;
     margin: 8px 0;
 }
 
@@ -144,11 +152,11 @@ button:hover {
 }
 
 .header-content__navigation ul {
+    list-style-type: none;
     flex-basis: 400px;
     flex-grow: 0;
     flex-shrink: 1;
 
-    list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -164,12 +172,16 @@ button:hover {
     max-width: 900px;
 }
 
+.header-content p {
+    font-size: 24px;
+}
+
 .header-content__squiggle {
     background-image: url(../assets/squiggle_line_stripe.svg);
     position: absolute;
     bottom: 0;
     left: cal(50%-40px);
-    height: 100px;
+    height: 90px;
     width: 80px;
 }
 
@@ -179,7 +191,7 @@ button:hover {
     background-color: var(--white);
 }
 
-.introduction-content{
+.introduction-content {
     max-width: 900px;
     padding: 100px 0;
 }
@@ -195,6 +207,62 @@ button:hover {
 
 
 /* --------------- 4.3 Projects ------------------------- */
+
+.projects-section {
+    background-color: var(--projects-bg-color);
+    padding: 40px 0 100px 0;
+}
+
+.project-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 40px 30px;
+}
+
+.project-article:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.project-article__container {
+    height: 260px;
+    flex-basis: 500px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    text-align: left;
+    padding: 0 50px;
+}
+
+.project-article__squiggle {
+    background-image: url(../assets/squiggle_line.svg);
+    width: 60px;
+    height: 6px;
+}
+
+.project-article__image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.project-article__image-wrapper img {
+    box-shadow: 0 30px 30px 0px rgba(0, 0, 0, 0.2);
+}
+
+.project-article__project-link {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
 
 /* --------------- 4.4 Services ------------------- */
 
