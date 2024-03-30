@@ -79,6 +79,11 @@ h4 {
     padding: 12px 0;
 }
 
+h5 {
+    font-size: 24px;
+    padding: 12px 0;
+}
+
 p {
     margin: 8px 0;
 }
@@ -180,7 +185,7 @@ button:hover {
     background-image: url(../assets/squiggle_line_stripe.svg);
     position: absolute;
     bottom: 0;
-    left: cal(50%-40px);
+    left: calc(50% - 40px);
     height: 90px;
     width: 80px;
 }
@@ -265,6 +270,50 @@ button:hover {
 }
 
 /* --------------- 4.4 Services ------------------- */
+
+.services-section {
+    background-color: var(--white);
+    padding: 100px 0;
+}
+
+.service-content__tiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-tile {
+    background-color: var(--white);
+    border: 1px solid var(--title-text-color);
+    border-radius: 3px;
+    box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);;
+    padding: 40px;
+    text-align: left;
+    font-weight: 300;
+    min-height: 380px;
+
+    flex-basis: 400px;
+    flex-shrink: 1;
+    flex-grow: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.service-tile h5 {
+    color: var(--title-text-color);
+}
+
+.service-tile p {
+    color: var(--service-tile-text-color);
+    font-size: 16px;
+}
+
+.service-tile__icon {
+    width: 80px;
+}
 
 /* --------------- 4.5 Contact ------------------------- */
 
