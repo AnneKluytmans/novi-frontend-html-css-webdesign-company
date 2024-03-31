@@ -21,15 +21,15 @@
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
 :root {
-    --title-text-color: #5722CD;
-    --normal-text-color: #0C0C0C;
-    --floating-text-color: #F2F0FF;
+    --primary: #5722CD;
+    --primary-dark: #4845E4;
+    --secondary: #ED4385;
+    --normal-text: #0C0C0C;
+    --floating-text: #F2F0FF;
+    --service-tile-text: #7A7A7A;
+    --projects-bg: #F3F6F9;
+    --footer-bg: #0C0C0C;
     --white: #FFF;
-    --service-tile-text-color: #7A7A7A;
-    --primary-bg-color: #4845E4;
-    --button-bg-color: #ED4385;
-    --projects-bg-color: #F3F6F9;
-    --footer-bg-color: #0C0C0C;
 }
 
 * {
@@ -48,7 +48,7 @@ body {
     font-weight: 300;
     font-size: 20px;
     text-align: center;
-    color: var(--normal-text-color);
+    color: var(--normal-text);
 }
 
 img {
@@ -78,6 +78,15 @@ h3 {
 h4 {
     font-size: 28px;
     padding: 12px 0;
+}
+
+h4::after {
+    display: block;
+    content: '';
+    margin-top: 40px;
+    background-image: url(../assets/squiggle_line.svg);
+    width: 60px;
+    height: 6px;
 }
 
 h5 {
@@ -110,8 +119,24 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
 }
 
+.triangle__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 55px solid var(--white);
+    border-right: 100vw solid transparent;
+}
+
+.triangle__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 60px solid var(--white);
+    border-left: 100vw solid transparent;
+}
 
 /* --------------- 3.2 Other --------------------------- */
 
@@ -119,11 +144,11 @@ a,
 a:link,
 a:visited {
     text-decoration: none;
-    color: var(--title-text-color)
+    color: var(--primary)
 }
 
 button {
-    background-color: var(--button-bg-color);
+    background-color: var(--secondary);
     color: var(--white);
     font-size: 14px;
     letter-spacing: 1px;
@@ -144,7 +169,7 @@ button:hover {
 /* --------------- 4.1 Header ------------------------- */
 
 .header-section {
-    background: var(--primary-bg-color);
+    background: var(--primary-dark);
     background: linear-gradient(90deg, #4B49E8 0%, #4B49E8 33%, #5722CD  100%);
     color: var(--white);
     padding: 30px 0;
@@ -196,6 +221,21 @@ button:hover {
 
 .introduction-section {
     background-color: var(--white);
+    position: relative;
+}
+
+.introduction-section::before {
+    display: block;
+    content: 'hello';
+    color: var(--floating-text);
+    font-size: 500px;
+    font-weight: 600;
+    letter-spacing: -16px;
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .introduction-content {
@@ -204,7 +244,7 @@ button:hover {
 }
 
 .introduction-content h3 {
-    color: var(--title-text-color);
+    color: var(--primary);
     line-height: 1.5;
 }
 
@@ -216,8 +256,23 @@ button:hover {
 /* --------------- 4.3 Projects ------------------------- */
 
 .projects-section {
-    background-color: var(--projects-bg-color);
-    padding: 40px 0 100px 0;
+    background-color: var(--projects-bg);
+    padding: 300px 0 100px 0;
+    position: relative;
+}
+
+.projects-section::before {
+    display: block;
+    content: 'work';
+    color: var(--white);
+    font-size: 500px;
+    font-weight: 600;
+    letter-spacing: -16px;
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .project-article {
@@ -249,12 +304,6 @@ button:hover {
     padding: 0 50px;
 }
 
-.project-article__squiggle {
-    background-image: url(../assets/squiggle_line.svg);
-    width: 60px;
-    height: 6px;
-}
-
 .project-article__image-wrapper {
     flex-basis: 800px;
     flex-grow: 0;
@@ -276,7 +325,22 @@ button:hover {
 
 .services-section {
     background-color: var(--white);
-    padding: 100px 0;
+    padding: 240px 0 100px 0;
+    position: relative;
+}
+
+.services-section::before {
+    display: block;
+    content: 'services';
+    color: var(--floating-text);
+    font-size: 280px;
+    font-weight: 600;
+    letter-spacing: -8px;
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
 }
 
 .service-content__tiles {
@@ -289,7 +353,7 @@ button:hover {
 
 .service-tile {
     background-color: var(--white);
-    border: 1px solid var(--title-text-color);
+    border: 1px solid var(--primary);
     border-radius: 3px;
     box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);
     padding: 40px;
@@ -305,11 +369,11 @@ button:hover {
 }
 
 .service-tile h5 {
-    color: var(--title-text-color);
+    color: var(--primary);
 }
 
 .service-tile p {
-    color: var(--service-tile-text-color);
+    color: var(--service-tile-text);
     font-size: 18px;
 }
 
@@ -320,10 +384,11 @@ button:hover {
 /* --------------- 4.5 Contact ------------------------- */
 
 .contact-section {
-    background: var(--primary-bg-color);
+    background: var(--primary-dark);
     background: linear-gradient(90deg, #4B49E8 0%, #4B49E8 33%, #5722CD  100%);
     color: var(--white);
     padding: 100px 0 40px 0;
+    position: relative;
 }
 
 .contact-content__form {
@@ -342,18 +407,18 @@ button:hover {
 .contact-content__form input,
 .contact-content__form textarea {
     background-color: var(--white);
-    border: 1px solid var(--service-tile-text-color);
+    border: 1px solid var(--service-tile-text);
     border-radius: 4px;
     font-family: Roboto, 'Arial', sans-serif;
     font-size: 16px;
-    color: var(--service-tile-text-color);
+    color: var(--service-tile-text);
     padding: 20px;
     width: 100%;
 }
 
 .contact-content__form input::placeholder,
 .contact-content__form textarea::placeholder {
-    color: var(--service-tile-text-color);
+    color: var(--service-tile-text);
 }
 
 .contact-content__form button {
@@ -364,7 +429,7 @@ button:hover {
 /* --------------- 4.6 Footer ------------------- */
 
 .footer-section {
-    background-color: var(--footer-bg-color);
+    background-color: var(--footer-bg);
     color: var(--white);
     font-size: 14px;
     padding: 15px 0;
