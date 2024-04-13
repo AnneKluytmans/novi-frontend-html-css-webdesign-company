@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto:wght@300;400;600;700&display=swap');
 
 /*////////////////////////
     Table of Contents
@@ -20,26 +20,463 @@
 
 /* ------------------------------- 1. Global Styles -------------------------------- */
 
+:root {
+    --primary: #5722CD;
+    --primary-dark: #4845E4;
+    --secondary: #ED4385;
+    --normal-text: #0C0C0C;
+    --floating-text: #F2F0FF;
+    --service-tile-text: #7A7A7A;
+    --projects-bg: #F3F6F9;
+    --footer-bg: #0C0C0C;
+    --white: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Roboto, 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+    color: var(--normal-text);
+}
+
+img {
+    width: 100%;
+}
+
 /* ------------------------------- 2. Typography ----------------------------------- */
+
+button, input {
+    font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Merriweather, 'Times New Roman', serif;
+}
+
+h1, h2 {
+    font-size: 44px;
+    padding: 20px 0;
+}
+
+h3 {
+    font-size: 30px;
+    padding: 15px 0;
+}
+
+h4 {
+    font-size: 28px;
+    padding: 12px 0;
+}
+
+h4::after {
+    display: block;
+    content: '';
+    margin-top: 40px;
+    background-image: url(../assets/squiggle_line.svg);
+    width: 60px;
+    height: 6px;
+}
+
+h5 {
+    font-size: 24px;
+    padding: 12px 0;
+}
+
+p {
+    margin: 12px 0;
+}
+
 
 /* ------------------------------- 3. Layout --------------------------------------- */
 
 /* --------------- 3.1 Reusables ----------------------- */
 
+.outer-content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.inner-content-container {
+    flex-basis: 1400px;
+    flex-shrink: 1;
+    flex-grow: 0;
+    margin: 0 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.triangle__bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-bottom: 55px solid var(--white);
+    border-right: 100vw solid transparent;
+}
+
+.triangle__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top: 60px solid var(--white);
+    border-left: 100vw solid transparent;
+}
+
 /* --------------- 3.2 Other --------------------------- */
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: var(--primary)
+}
+
+button {
+    background-color: var(--secondary);
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    box-shadow: 0 5px 8px 5px rgba(0, 0, 0, 0.15);
+    padding: 25px 45px;
+    margin: 30px 0;
+}
+
+a:hover,
+button:hover {
+    cursor: pointer;
+}
 
 /* ------------------------------- 4. Areas ---------------------------------------- */
 
 /* --------------- 4.1 Header ------------------------- */
 
+.header-section {
+    background: var(--primary-dark);
+    background: linear-gradient(90deg, #4B49E8 0%, #4B49E8 33%, #5722CD  100%);
+    color: var(--white);
+    padding: 30px 0;
+    position: relative;
+}
+
+.header-content__navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header-content__navigation ul {
+    list-style-type: none;
+    flex-basis: 400px;
+    flex-grow: 0;
+    flex-shrink: 1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header-content__navigation a {
+    color: var(--white);
+}
+
+.header-content__hero {
+    padding: 100px 0;
+    margin-bottom: 100px;
+    max-width: 900px;
+}
+
+.header-content p {
+    font-size: 24px;
+}
+
+.header-content__squiggle {
+    background-image: url(../assets/squiggle_line_stripe.svg);
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 40px);
+    height: 90px;
+    width: 80px;
+}
+
 /* --------------- 4.2 Introduction ------------------- */
+
+.introduction-section {
+    background-color: var(--white);
+    position: relative;
+}
+
+.introduction-section::before {
+    display: block;
+    content: 'hello';
+    color: var(--floating-text);
+    font-size: 500px;
+    font-weight: 600;
+    letter-spacing: -16px;
+    opacity: 0.7;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.introduction-content {
+    max-width: 900px;
+    padding: 100px 0;
+}
+
+.introduction-content h3 {
+    color: var(--primary);
+    line-height: 1.5;
+}
+
+.introduction-content p {
+    margin-top: 100px;
+}
+
 
 /* --------------- 4.3 Projects ------------------------- */
 
+.projects-section {
+    background-color: var(--projects-bg);
+    padding: 300px 0 100px 0;
+    position: relative;
+}
+
+.projects-section::before {
+    display: block;
+    content: 'work';
+    color: var(--white);
+    font-size: 500px;
+    font-weight: 600;
+    letter-spacing: -16px;
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.project-article {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 40px 30px;
+}
+
+.project-article:nth-of-type(even) {
+    flex-direction: row-reverse;
+}
+
+.project-article__container {
+    height: 260px;
+    flex-basis: 500px;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    font-weight: 400;
+    text-align: left;
+    padding: 0 50px;
+}
+
+.project-article__image-wrapper {
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+
+.project-article__image-wrapper img {
+    box-shadow: 0 30px 30px 0px rgba(0, 0, 0, 0.2);
+}
+
+.project-article__project-link {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 /* --------------- 4.4 Services ------------------- */
+
+.services-section {
+    background-color: var(--white);
+    padding: 240px 0 100px 0;
+    position: relative;
+}
+
+.services-section::before {
+    display: block;
+    content: 'services';
+    color: var(--floating-text);
+    font-size: 280px;
+    font-weight: 600;
+    letter-spacing: -8px;
+    opacity: 0.8;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.service-content__tiles {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.service-tile {
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    border-radius: 3px;
+    box-shadow: 0 10px 15px 0px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    text-align: left;
+    min-height: 400px;
+
+    flex-basis: 400px;
+    flex-shrink: 1;
+    flex-grow: 0;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.service-tile h5 {
+    color: var(--primary);
+}
+
+.service-tile p {
+    color: var(--service-tile-text);
+    font-size: 18px;
+}
+
+.service-tile__icon {
+    width: 80px;
+}
 
 /* --------------- 4.5 Contact ------------------------- */
 
+.contact-section {
+    background: var(--primary-dark);
+    background: linear-gradient(90deg, #4B49E8 0%, #4B49E8 33%, #5722CD  100%);
+    color: var(--white);
+    padding: 100px 0 40px 0;
+    position: relative;
+}
+
+.contact-content__form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+}
+
+.contact-content__form label {
+    font-weight: 600;
+    font-size: 18px;
+    padding: 20px 0;
+}
+
+.contact-content__form input,
+.contact-content__form textarea {
+    background-color: var(--white);
+    border: 1px solid var(--service-tile-text);
+    border-radius: 4px;
+    font-family: Roboto, 'Arial', sans-serif;
+    font-size: 16px;
+    color: var(--service-tile-text);
+    padding: 20px;
+    width: 100%;
+}
+
+.contact-content__form input::placeholder,
+.contact-content__form textarea::placeholder {
+    color: var(--service-tile-text);
+}
+
+.contact-content__form button {
+    width: 200px;
+    align-self: center;
+}
+
 /* --------------- 4.6 Footer ------------------- */
 
+.footer-section {
+    background-color: var(--footer-bg);
+    color: var(--white);
+    font-size: 14px;
+    padding: 15px 0;
+}
+
 /* ------------------------------- 5. Media Queries -------------------------------- */
+
+@media screen and (max-width: 890px) {
+
+    h4 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 24px;
+        font-weight: 400;
+    }
+
+    .header-content__navigation {
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    .header-content p {
+        font-size: 32px;
+    }
+
+    .project-article,
+    .project-article:nth-of-type(even){
+        flex-direction: column-reverse;
+    }
+
+    .project-article__container {
+        flex-basis: auto;
+        padding: 0;
+        margin-top: 30px;
+    }
+
+    .project-article__image-wrapper {
+        flex-basis: auto;
+    }
+
+    .contact-content__form {
+        width: 90%;
+    }
+
+    .footer-section p {
+        font-size: 18px;
+    }
+}
