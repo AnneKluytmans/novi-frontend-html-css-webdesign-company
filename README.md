@@ -58,16 +58,20 @@ All designs were provided by the company’s design team. Your task as a fronten
 ![Responsiveness demo](assets/screenshots/responsive_demo.gif)
 ---
 
+## Live Demo
+
+[Bekijk de live demo](https://annekluytmans.github.io/novi-homework-frontend-html-css-concept-opdracht/)
+
 ## Project Setup
 
 Clone the repository in an IDE and run `index.html` from part 1, 2 or 3 in your browser:
 
 ```bash
-git@github.com:AnneKluytmans/novi-homework-frontend-html-css-flexbox.git
+git@github.com:AnneKluytmans/novi-homework-frontend-html-css-concept-opdracht.git
 ```
 or
 ```bash
-git clone https://github.com/AnneKluytmans/novi-homework-frontend-html-css-flexbox.git
+git clone https://github.com/AnneKluytmans/novi-homework-frontend-html-css-concept-opdracht.git
 ```
 
 ---
