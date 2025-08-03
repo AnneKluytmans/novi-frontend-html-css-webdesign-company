@@ -64,15 +64,7 @@ All designs were provided by the company’s design team. Your task as a fronten
 
 ## Project Setup
 
-Clone the repository in an IDE and run `index.html` from part 1, 2 or 3 in your browser:
-
-```bash
-git@github.com:AnneKluytmans/novi-homework-frontend-html-css-concept-opdracht.git
-```
-or
-```bash
-git clone https://github.com/AnneKluytmans/novi-homework-frontend-html-css-concept-opdracht.git
-```
+Clone the repository in an IDE and run `index.html` in your browser.
 
 ---
 
