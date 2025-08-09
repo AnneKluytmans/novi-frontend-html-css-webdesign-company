@@ -60,7 +60,7 @@ All designs were provided by the company’s design team. Your task as a fronten
 
 ## Live Demo
 
-[Bekijk de live demo](https://annekluytmans.github.io/novi-homework-frontend-html-css-concept-opdracht/)
+[Bekijk de live demo](https://annekluytmans.github.io/novi-frontend-html-css-webdesign-company/)
 
 ## Project Setup
 
